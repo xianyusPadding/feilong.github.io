@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[渲染并展示三维对象]]></title>
+    <title><![CDATA[chapter01:渲染并展示三维对象]]></title>
     <url>%2F2017%2F06%2F26%2F%E6%B8%B2%E6%9F%93%E5%B9%B6%E5%B1%95%E7%A4%BA%E4%B8%89%E7%BB%B4%E5%AF%B9%E8%B1%A1%2F</url>
     <content type="text"><![CDATA[首先我们要做的效果具体如下： 那我们应该怎么去使用three.js来做出这种效果呢？ 创建基本的页面框架123456789101112131415161718&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;Example01-01&lt;/title&gt; &lt;script type="text/javascript" src="js/jquery.js"&gt;&lt;/script&gt; &lt;script type="text/javascript" src="js/three.js"&gt;&lt;/script&gt; &lt;style&gt; body&#123;margin: 0;overflow: hidden;&#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="WebGL-output"&gt; &lt;/div&gt; &lt;script type="text/javascript"&gt; $(function () &#123; &#125;) &lt;/script&gt;&lt;/body&gt; 渲染并展示三位对象 现在我们要创建的一个场景scene,也就是我们日常说到的容器，添加几个物体和相机。 html: 12&lt;div id="WebGL-output"&gt;&lt;/div&gt; js: 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465&lt;script type="text/javascript"&gt; $(function () &#123; //scene场景 var scene = new THREE.Scene(); //camera var camera = new THREE.PerspectiveCamera(45, window.innerWidth/innerHeight, 0.1, 1000); //randerer var renderer = new THREE.WebGLRenderer(); //设置renderer的背景颜色：0xEEEEEE, 和尺寸 renderer.setClearColor(0xEEEEEE); renderer.setSize(window.innerWidth, window.innerHeight); //axes坐标轴 var axes = new THREE.AxisHelper(20); scene.add(axes); //定义平面的尺寸 var planeGeometry = new THREE.PlaneGeometry(60, 20); //创建基本材质 var planeMaterial = new THREE.MeshBasicMaterial(&#123; color: 0xcccccc &#125;) //plane平面 var plane = new THREE.Mesh(planeGeometry, planeMaterial); //围绕x轴旋转90deg plane.rotation.x = -0.5*Math.PI; //position定位 plane.position.x = 15; plane.position.y = 0; plane.position.z = 0; scene.add(plane); //cube方块 var cubeGeometry = new THREE.CubeGeometry(4, 4, 4); var cubeMaterial = new THREE.MeshBasicMaterial(&#123; color: 0xff0000, wireframe: true &#125;); var cube = new THREE.Mesh(cubeGeometry, cubeMaterial); cube.position.x = -4; cube.position.y = 3; cube.position.z = 0; scene.add(cube); //sphere球体 var sphereGeometry = new THREE.SphereGeometry(4, 20, 20); var sphereMaterial = new THREE.MeshBasicMaterial(&#123; color: 0x77ffff, wireframe: true &#125;); var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial); sphere.position.x = 20; sphere.position.y = 4; sphere.position.z = 2; scene.add(sphere); camera.position.x = -30; camera.position.y = 40; camera.position.z = 30; camera.lookAt(scene.position); $('#WebGL-output').append(renderer.domElement); renderer.render(scene, camera); &#125;)&lt;/script&gt;]]></content>
       <categories>
@@ -19,7 +19,7 @@
   <entry>
     <title><![CDATA[浅谈hexo部署个人blog]]></title>
     <url>%2F2017%2F06%2F25%2F%E6%B5%85%E8%B0%88hexo%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BAblog%2F</url>
-    <content type="text"><![CDATA[hexo]]></content>
+    <content type="text"><![CDATA[]]></content>
       <categories>
         <category>hexo</category>
       </categories>
