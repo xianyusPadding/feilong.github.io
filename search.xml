@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA['用js写原生ajax']]></title>
+    <title><![CDATA[用js写原生ajax]]></title>
     <url>%2F2017%2F07%2F11%2F%E7%94%A8js%E5%86%99%E5%8E%9F%E7%94%9Fajax%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[新建XMLHttpRequest对象： var request = new XMLHttpRequest(); 状态发生变化时，回调函数： XMLHttpRequest().readyState的五种状态:0 － （未初始化）还没有调用send()方法1 － （载入）已调用send()方法，正在发送请求2 － （载入完成）send()方法执行完成，已经接收到全部响应内容3 － （交互）正在解析响应内容4 － （完成）响应内容解析完成，可以在客户端调用了 html:1&lt;textarea id="response-text"&gt;&lt;/textarea&gt; js:12345678910111213141516171819202122232425262728293031323334function success(text) &#123; var textarea = document.getElementById('response-text'); textarea.value = text;&#125;function fail(code) &#123; var textarea = document.getElementById('response-text'); textarea.value = 'Error code: ' + code;&#125;request.onreadystatechange = function() &#123; if (request.readyState === 4) &#123; // 成功完成 console.log(request.readyState); // 判断响应结果: if (request.status === 200) &#123; // 成功，通过responseText拿到响应的文本: console.log(request.responseText); return success(request.responseText); &#125; else &#123; // 失败，根据响应码判断失败原因: console.log(request.responseText); return fail(request.status); &#125; &#125; else &#123; // HTTP请求还在继续... console.log(request.readyState); &#125;&#125;// 发送请求:request.open('GET', './data.json');request.send();alert('请求已发送，请等待响应...');]]></content>
+      <categories>
+        <category>ajax</category>
+      </categories>
+      <tags>
+        <tag>ajax</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[前端面试 --- 基础笔试]]></title>
     <url>%2F2017%2F07%2F10%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%20---%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AF%95%2F</url>
     <content type="text"><![CDATA[1. css的选择器有哪些，优先级是怎么样的？参考答案：1.通用选择器、2.标签选择器、3.id选择器、4.class选择器、5.组合选择器、6.属性选择器优先级：1.同类型、同级别的选择器，后者由于前者、2.id&gt;类样式&gt;标签&gt;* 2. 用纯css画一个底部为10px三角形。 1234567#trangle-up&#123; width:0; height:0; border-left:5px solid transparent; //transparent透明的 border-right:5px solid transparent; border-bottom:10px solid red;&#125; 3. 写一个布局，左边为100px，右边的宽度自适应。html:1234&lt;div id="box"&gt; &lt;div class="left"&gt;&lt;/div&gt; &lt;div class="right"&gt;&lt;/div&gt;&lt;/div&gt; js:1234567891011121314#box&#123; display: flex;&#125;.left&#123; width:80px; height: 100px; background: red; flex:0 0 100px;&#125;.right&#123; height: 100px; background: blue; flex: 1;&#125; 4. 用js实现一个千位分割函数，传入一个num，返回一个千位分隔的字符串。（例：1000 — 1,000）1234567891011121314151617181920function thouSplit(num)&#123; var str = String(num); var arr = []; len = str.length/3; if(typeof(num) == 'number')&#123; for(var i=0; i&lt;len; i++)&#123; item = parseInt(num%1000); num = num/1000; arr.push(item); &#125; arr = arr.reverse(); return arr.join(','); &#125; else&#123; console.log('this is not a number'); return; &#125;&#125;thouSplit(1234567890); 5. 用js写一个函数，传入参数n，返回n个随机整数，整数的范围是[2,32],随机数不含重复数字。12345678910111213141516171819202122232425//产生随机数function random(n)&#123; var arr = []; var endArr = []; for(var i=0; i&lt;n; i++)&#123; var item = Math.floor(Math.random()*30 + 2); if(isIncluded(item, arr))&#123; arr.push(item); &#125;else&#123; i--; &#125; &#125; console.log(arr); return arr;&#125;//判断是否出现重复function isIncluded(element,arr)&#123; for(var i=0; i&lt;arr.length; i++)&#123; if(arr[i] == element)&#123; return false; &#125; &#125; return true;&#125;random(10); 6. 用js写ajax。123456789101112131415161718192021222324252627282930313233343536function success(text) &#123; var textarea = document.getElementById('response-text'); textarea.value = text;&#125;function fail(code) &#123; var textarea = document.getElementById('response-text'); textarea.value = 'Error code: ' + code;&#125;var request = new XMLHttpRequest(); // 新建XMLHttpRequest对象request.onreadystatechange = function () &#123; // 状态发生变化时，函数被回调 if (request.readyState === 4) &#123; // 成功完成 console.log(request.readyState); // 判断响应结果: if (request.status === 200) &#123; // 成功，通过responseText拿到响应的文本: console.log(request.responseText); return success(request.responseText); &#125; else &#123; // 失败，根据响应码判断失败原因: console.log(request.responseText); return fail(request.status); &#125; &#125; else &#123; // HTTP请求还在继续... console.log(request.readyState); &#125;&#125;// 发送请求:request.open('GET', './data.json');request.send();alert('请求已发送，请等待响应...');]]></content>
       <categories>
-        <category>html5,javascript</category>
+        <category>html5</category>
+        <category>javascript</category>
       </categories>
       <tags>
-        <tag>html5,javascript</tag>
+        <tag>html5</tag>
+        <tag>javascript</tag>
       </tags>
   </entry>
   <entry>

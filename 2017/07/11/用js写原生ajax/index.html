@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="feilong's blog" />
+  <meta name="keywords" content="ajax," />
 
 
 
@@ -93,16 +93,17 @@
 
 
 
-<meta name="description" content="一些是一些情，乐观自信爱">
+<meta name="description" content="新建XMLHttpRequest对象： var request = new XMLHttpRequest();  状态发生变化时，回调函数： XMLHttpRequest().readyState的五种状态:0 － （未初始化）还没有调用send()方法1 － （载入）已调用send()方法，正在发送请求2 － （载入完成）send()方法执行完成，已经接收到全部响应内容3 － （交互）正在解析响">
+<meta name="keywords" content="ajax">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&#39;用js写原生ajax&#39;">
+<meta property="og:title" content="用js写原生ajax">
 <meta property="og:url" content="http://yoursite.com/2017/07/11/用js写原生ajax/index.html">
 <meta property="og:site_name" content="feilong&#39;s blog">
-<meta property="og:description" content="一些是一些情，乐观自信爱">
-<meta property="og:updated_time" content="2017-07-11T02:18:51.073Z">
+<meta property="og:description" content="新建XMLHttpRequest对象： var request = new XMLHttpRequest();  状态发生变化时，回调函数： XMLHttpRequest().readyState的五种状态:0 － （未初始化）还没有调用send()方法1 － （载入）已调用send()方法，正在发送请求2 － （载入完成）send()方法执行完成，已经接收到全部响应内容3 － （交互）正在解析响">
+<meta property="og:updated_time" content="2017-07-11T02:46:02.343Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;用js写原生ajax&#39;">
-<meta name="twitter:description" content="一些是一些情，乐观自信爱">
+<meta name="twitter:title" content="用js写原生ajax">
+<meta name="twitter:description" content="新建XMLHttpRequest对象： var request = new XMLHttpRequest();  状态发生变化时，回调函数： XMLHttpRequest().readyState的五种状态:0 － （未初始化）还没有调用send()方法1 － （载入）已调用send()方法，正在发送请求2 － （载入完成）send()方法执行完成，已经接收到全部响应内容3 － （交互）正在解析响">
 
 
 
@@ -136,7 +137,7 @@
 
 
 
-  <title>'用js写原生ajax' | feilong's blog</title>
+  <title>用js写原生ajax | feilong's blog</title>
   
 
 
@@ -316,7 +317,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">'用js写原生ajax'</h2>
+          <h2 class="post-title" itemprop="name headline">用js写原生ajax</h2>
         
 
         <div class="post-meta">
@@ -338,6 +339,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">ajax</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -368,7 +391,15 @@
       
 
       
-        
+        <p><strong>新建XMLHttpRequest对象：</strong></p>
+<p>var request = new XMLHttpRequest();</p>
+<p><br></p>
+<p><strong>状态发生变化时，回调函数：</strong></p>
+<p><strong>XMLHttpRequest().readyState的五种状态:</strong><br>0 － （未初始化）还没有调用send()方法<br>1 － （载入）已调用send()方法，正在发送请求<br>2 － （载入完成）send()方法执行完成，已经接收到全部响应内容<br>3 － （交互）正在解析响应内容<br>4 － （完成）响应内容解析完成，可以在客户端调用了</p>
+<a id="more"></a>
+<p>html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"response-text"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>js:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">success</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> textarea = <span class="built_in">document</span>.getElementById(<span class="string">'response-text'</span>);</div><div class="line">    textarea.value = text;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fail</span>(<span class="params">code</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> textarea = <span class="built_in">document</span>.getElementById(<span class="string">'response-text'</span>);</div><div class="line">    textarea.value = <span class="string">'Error code: '</span> + code;</div><div class="line">&#125;</div><div class="line"></div><div class="line">request.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span> (request.readyState === <span class="number">4</span>) &#123; <span class="comment">// 成功完成</span></div><div class="line">    	<span class="built_in">console</span>.log(request.readyState);</div><div class="line">        <span class="comment">// 判断响应结果:</span></div><div class="line">        <span class="keyword">if</span> (request.status === <span class="number">200</span>) &#123;</div><div class="line">            <span class="comment">// 成功，通过responseText拿到响应的文本:</span></div><div class="line">            <span class="built_in">console</span>.log(request.responseText);</div><div class="line">            <span class="keyword">return</span> success(request.responseText);          </div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// 失败，根据响应码判断失败原因:</span></div><div class="line">            <span class="built_in">console</span>.log(request.responseText);</div><div class="line">            <span class="keyword">return</span> fail(request.status);</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// HTTP请求还在继续...</span></div><div class="line">        <span class="built_in">console</span>.log(request.readyState);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 发送请求:</span></div><div class="line">request.open(<span class="string">'GET'</span>, <span class="string">'./data.json'</span>);</div><div class="line">request.send();</div><div class="line"></div><div class="line">alert(<span class="string">'请求已发送，请等待响应...'</span>);</div></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -406,6 +437,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ajax/" rel="tag"><i class="fa fa-tag"></i> ajax</a>
+          
+        </div>
       
 
       
@@ -521,7 +558,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -532,7 +569,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
