@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[axios的日常使用]]></title>
+    <url>%2F2017%2F08%2F21%2Faxios%E7%9A%84%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[axios-demos这是关于axios的一般使用 demo的相关依赖 bootstrap.css（为了美观）、vue.min.js和axios.min.js axios的相关使用： axios.get(url[, config]).then(res).catch(error) axios.post(url[, data[, config]]).then(res).catch(error) axios({url,data/params,config}).then(res).catch(error)具体使用可参考源码（也比较简单）axios的全局拦截器（可以进行一些loading处理）：12345678910axios.interceptors.request.use( config =&gt; &#123; console.log('request init.') //loading... return config&#125;)axios.interceptors.response.use( response =&gt; &#123; console.log('response init.') //loading... return response&#125;)]]></content>
+      <categories>
+        <category>vue.js</category>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>vue.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[用js写原生ajax]]></title>
     <url>%2F2017%2F07%2F11%2F%E7%94%A8js%E5%86%99%E5%8E%9F%E7%94%9Fajax%2F</url>
     <content type="text"><![CDATA[新建XMLHttpRequest对象： var request = new XMLHttpRequest(); 状态发生变化时，回调函数： XMLHttpRequest().readyState的五种状态:0 － （未初始化）还没有调用send()方法1 － （载入）已调用send()方法，正在发送请求2 － （载入完成）send()方法执行完成，已经接收到全部响应内容3 － （交互）正在解析响应内容4 － （完成）响应内容解析完成，可以在客户端调用了 html:1&lt;textarea id="response-text"&gt;&lt;/textarea&gt; js:12345678910111213141516171819202122232425262728293031323334function success(text) &#123; var textarea = document.getElementById('response-text'); textarea.value = text;&#125;function fail(code) &#123; var textarea = document.getElementById('response-text'); textarea.value = 'Error code: ' + code;&#125;request.onreadystatechange = function() &#123; if (request.readyState === 4) &#123; // 成功完成 console.log(request.readyState); // 判断响应结果: if (request.status === 200) &#123; // 成功，通过responseText拿到响应的文本: console.log(request.responseText); return success(request.responseText); &#125; else &#123; // 失败，根据响应码判断失败原因: console.log(request.responseText); return fail(request.status); &#125; &#125; else &#123; // HTTP请求还在继续... console.log(request.readyState); &#125;&#125;// 发送请求:request.open('GET', './data.json');request.send();alert('请求已发送，请等待响应...');]]></content>
