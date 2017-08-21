@@ -3,14 +3,14 @@
   <entry>
     <title><![CDATA[axios的日常使用]]></title>
     <url>%2F2017%2F08%2F21%2Faxios%E7%9A%84%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[axios-demos这是关于axios的一般使用 demo的相关依赖 bootstrap.css（为了美观）、vue.min.js和axios.min.js axios的相关使用： axios.get(url[, config]).then(res).catch(error) axios.post(url[, data[, config]]).then(res).catch(error) axios({url,data/params,config}).then(res).catch(error)具体使用可参考源码（也比较简单）axios的全局拦截器（可以进行一些loading处理）：12345678910axios.interceptors.request.use( config =&gt; &#123; console.log('request init.') //loading... return config&#125;)axios.interceptors.response.use( response =&gt; &#123; console.log('response init.') //loading... return response&#125;)]]></content>
+    <content type="text"><![CDATA[axios-demos这是关于axios的一般使用demo的相关依赖 bootstrap.css（为了美观）、vue.min.js和axios.min.js axios的相关使用： axios.get(url[, config]).then(res).catch(error) axios.post(url[, data[, config]]).then(res).catch(error) axios({url,data/params,config}).then(res).catch(error)具体使用可参考源码（也比较简单）axios的全局拦截器（可以进行一些loading处理）：12345678910axios.interceptors.request.use( config =&gt; &#123; console.log('request init.') //loading... return config&#125;)axios.interceptors.response.use( response =&gt; &#123; console.log('response init.') //loading... return response&#125;)]]></content>
       <categories>
         <category>vue.js</category>
         <category>javascript</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
         <tag>vue.js</tag>
+        <tag>javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -33,8 +33,8 @@
         <category>javascript</category>
       </categories>
       <tags>
-        <tag>html5</tag>
         <tag>javascript</tag>
+        <tag>html5</tag>
       </tags>
   </entry>
   <entry>
